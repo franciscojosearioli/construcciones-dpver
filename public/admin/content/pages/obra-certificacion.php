@@ -13,7 +13,7 @@ $inspeccion_certificados = certificados_inspeccion($obra_id);
 $certificados_redeterminados = certificados_red_inspeccion($obra_id);
 $certificados_plan = plan_oficial_obras($obra_id);
 $certificados_adec = certificados_redeterminados_obras($obra_id);
-$certificados_multa = plan_oficial_obras($obra_id);
+$certificados_multa = plan_oficial_obras($obra_id,$obra['idplanes_de_trabajo']);
 
 $all_user = all_usuarios();
 $obra_bacheo = obra_bacheo($obra_id);
@@ -29,7 +29,7 @@ $result = $mysqli->query($query);
 $query2 = sprintf("SELECT avance FROM obras_planoficial WHERE idobras = '{$obra_id}' AND idplanes_de_trabajo = '{$obra['idplanes_de_trabajo']}' AND avance > 0 ORDER BY idobras_planoficial ASC");
 $result2 = $mysqli->query($query2);
 
-$query3 = sprintf("SELECT numero FROM obras_planoficial WHERE idobras = '{$obra_id}' AND idplanes_de_trabajo = '{$obra['idplanes_de_trabajo']}' AND numero > 0 GROUP BY numero ORDER BY idobras_planoficial ASC");
+$query3 = sprintf("SELECT numero FROM obras_planoficial WHERE idobras = '{$obra_id}' AND idplanes_de_trabajo = '{$obra['idplanes_de_trabajo']}' AND numero > 0 GROUP BY idobras_planoficial ORDER BY idobras_planoficial ASC");
 $result3 = $mysqli->query($query3);
 
 $numero = array();

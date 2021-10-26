@@ -1528,10 +1528,10 @@ function actas_redeterminacion_definitivas($id){
 }
 
 
-function plan_oficial_obras($dato){
+function plan_oficial_obras($dato,$plan){
   global $db;
   $sql  =" SELECT * FROM obras_planoficial";
-  $sql .=" WHERE idobras={$dato} ORDER BY idobras_planoficial ASC";
+  $sql .=" WHERE idobras={$dato} AND idplanes_de_trabajo ={$plan} ORDER BY idobras_planoficial ASC";
   return find_by_sql($sql);
 }
 
