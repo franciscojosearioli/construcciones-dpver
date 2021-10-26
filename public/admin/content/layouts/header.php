@@ -75,6 +75,8 @@ session_destroy();
 <script src="includes/assets/plugins/pushjs/push.min.js"></script>
 <script src="includes/assets/plugins/Chart.js/Chart.min.js"></script>
 <script src="includes/assets/js/notify.min.js"></script>
+<script src="includes/assets/js/jquery-validate.min.js"></script>
+
 
 <div id="main-wrapper">
 <header class="topbar">
