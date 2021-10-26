@@ -293,7 +293,7 @@ echo 'Avance de obra actualizado el '.format_date($obra['registro_certificados_f
 
 
 <li class="nav-item"><a class="nav-link active" data-toggle="tab" role="tab" aria-controls="obra-informe" href="obra-informe.php?id=<?php echo $obra_id; ?>" data-target="#obra-informe">MEMORIA</a></li>
-<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" aria-controls="obra-plazos" href="obra-plazos.php?id=<?php echo $obra_id; ?>" data-target="#obra-plazos">DESARROLLO</a></li>
+<!--<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" aria-controls="obra-plazos" href="obra-plazos.php?id=<?php echo $obra_id; ?>" data-target="#obra-plazos">DESARROLLO</a></li>-->
 <?php if(!empty($modificaciones_de_obra)){ ?>
 <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" aria-controls="obra-modificaciones" href="obra-modificaciones.php?id=<?php echo $obra_id; ?>" data-target="#obra-modificaciones">MODIFICACIONES</a></li>
 <?php } ?>
