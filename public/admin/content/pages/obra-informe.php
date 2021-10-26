@@ -57,7 +57,7 @@ foreach($ejecutados as $obra):
                                           </div>
                                         </div>
                                       </div>  -->
-<div class="row p-t-20 p-b-20 justify-content-center">
+<div class="row justify-content-center">
 <div class="col-lg-10 col-md-10 col-sm-12">
                                            <div class="row">
 <?php include('../../content/forms/agregar_mapa.php');
@@ -66,13 +66,12 @@ include('../../content/forms/eliminar_mapa.php');
 </div>
 </div>
 </div>
-                                      <div class="row p-t-20 p-b-20 justify-content-center"  id="vista_mapa_obra">
+                                      <div class="row justify-content-center"  id="vista_mapa_obra">
                                         <div class="col-lg-8 col-md-8 col-sm-12">
-                                           <div class="row">
-    <h3 class="titulo-bienvenida p-20">
+                                        <h3 class="titulo-bienvenida p-20">
    Generalidades de obra
     </h3>
-  </div> 
+
                                             <div class="card">
                                               <div class="card-body">
                                               <div class="p-3">
@@ -146,11 +145,9 @@ include('../../content/forms/eliminar_mapa.php');
                                         </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12">
-                                           <div class="row">
     <h3 class="titulo-bienvenida p-20">
    Ubicacion de obra
     </h3>
-  </div> 
                                             <div class="card">
                                               <div class="card-body">
                                         <div>
