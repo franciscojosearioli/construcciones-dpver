@@ -48,8 +48,8 @@ $result2->close();
 $result3->close();
 $mysqli->close();
 foreach($ejecutados as $obra):
-  if($obra['idobras'] == $obra_id){
-    ?>
+if($obra['idobras'] == $obra_id){
+?>
 
 <div class="row justify-content-center">
 
@@ -59,14 +59,14 @@ foreach($ejecutados as $obra):
 <div class="card-body mx-4"> 
 <h3 class="card-title">Montos y Plazos vigentes</h3> 
 <?php if(permiso('admin') || permiso('certificacion') || permiso('obras')){ ?>
-                    <div class="p-b-10"> <a href="" data-toggle="modal" data-target="#montos_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
-                  <?php } ?>
+<div class="p-b-10"> <a href="" data-toggle="modal" data-target="#montos_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
+<?php } ?>
 <label class="control-label text-muted" style="font-size:12px;">Monto de contrato vigente a precios base </label>
 <p><?php if(!empty($obra['monto_vigente'])){ echo '$ '.numero($obra['monto_vigente']); } ?></p>
 
 <?php if(!empty($obra['idcotizaciones'])){ 
-    $cotizacion_obra = find_by_id('cotizaciones','idcotizaciones',$obra['idcotizaciones']);
-    ?>
+$cotizacion_obra = find_by_id('cotizaciones','idcotizaciones',$obra['idcotizaciones']);
+?>
 <hr>
 <label class="control-label text-muted" style="font-size:12px;">Según cotizacion vigente</label>
 <a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080" >
@@ -76,9 +76,9 @@ foreach($ejecutados as $obra):
 <span style="font-weight:500">Cotizacion <?php echo $cotizacion_obra['numero'].' | '.$cotizacion_obra['detalle']; ?></span>
 </div>
 <div class="ml-auto my-auto mr-3">
-    <span onclick="ver_cotizacion(<?php echo $obra['idcotizaciones']; ?>)">Ver</span> <?php if(permiso('admin') || permiso('obras')){ ?> |  
-    <span onclick="editar_planilla_cotizacion(<?php echo $obra['idcotizaciones']; ?>)">Editar</span> | 
-    <span onclick="eliminar_cotizacion(<?php echo $obra['idcotizaciones'];?>)" >Eliminar</span><?php } ?>
+<span onclick="ver_cotizacion(<?php echo $obra['idcotizaciones']; ?>)">Ver</span> <?php if(permiso('admin') || permiso('obras')){ ?> |  
+<span onclick="editar_planilla_cotizacion(<?php echo $obra['idcotizaciones']; ?>)">Editar</span> | 
+<span onclick="eliminar_cotizacion(<?php echo $obra['idcotizaciones'];?>)" >Eliminar</span><?php } ?>
 </div>
 </div></a><br>
 <?php } ?>
@@ -95,8 +95,8 @@ foreach($ejecutados as $obra):
 <div class="card-body mx-4"> 
 <h3 class="card-title">Avance de obra</h3> 
 <?php if(permiso('admin') || permiso('certificacion') || permiso('obras')){ ?>
-                    <div class="p-b-10"> <a href="" data-toggle="modal" data-target="#avance_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
-                  <?php } ?>
+<div class="p-b-10"> <a href="" data-toggle="modal" data-target="#avance_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
+<?php } ?>
 <label class="control-label text-muted" style="font-size:12px;">Numero de certificado </label>
 <p><?php if(!empty($obra['certificado_numero'])){ echo $obra['certificado_numero']; } ?></p>
 <label class="control-label text-muted" style="font-size:12px;">Fecha certificada</label>
@@ -117,14 +117,14 @@ foreach($ejecutados as $obra):
 <label class="control-label text-muted" style="font-size:12px;">Valor del margen de multa</label>
 <p><?php if(!empty($obra['valormulta'])){  echo $obra['valormulta']; } ?> </p>
 
- <label class="control-label text-muted" style="font-size:12px;">Vencimiento de certificados</label>
-                                            <p><?php if(!empty($obra['certificado_vencimiento'])){
-                                             echo $obra['certificado_vencimiento'].' dias'; }
-                                             ?></p>
-                                             <?php if($obra['anticipo_financiero'] == 1){ ?>
-                                             <label class="control-label text-muted" style="font-size:12px;">Anticipo financiero</label>
-                <p> <?php $res_anticipo = ($obra['contrato_monto']*$obra['valor_anticipo_financiero'])/100; echo $obra['valor_anticipo_financiero'].' % ($ '.numero($res_anticipo).')'; ?></p>
-                                          <?php } ?>
+<label class="control-label text-muted" style="font-size:12px;">Vencimiento de certificados</label>
+        <p><?php if(!empty($obra['certificado_vencimiento'])){
+          echo $obra['certificado_vencimiento'].' dias'; }
+          ?></p>
+          <?php if($obra['anticipo_financiero'] == 1){ ?>
+          <label class="control-label text-muted" style="font-size:12px;">Anticipo financiero</label>
+<p> <?php $res_anticipo = ($obra['contrato_monto']*$obra['valor_anticipo_financiero'])/100; echo $obra['valor_anticipo_financiero'].' % ($ '.numero($res_anticipo).')'; ?></p>
+      <?php } ?>
 <!--
 <?php if(permiso('admin') || permiso('certificacion') || permiso('obras')){ ?>
 <div class="p-b-10"> <a href="" data-toggle="modal" data-target="#avance_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
@@ -141,10 +141,10 @@ foreach($ejecutados as $obra):
 <p><?php echo $obra['certificado_porcentaje'].' %'; ?></p>
 
 
-                  
+
 <?php if($obra['registro_certificados_fecha'] != '0000-00-00' && !empty($obra['registro_certificados_fecha'])){
-                      echo '<hr>
-                  <span style="padding:20px;color:#000;">Actualizado el '.format_date($obra['registro_certificados_fecha']).'</span> '; } ?> -->
+echo '<hr>
+<span style="padding:20px;color:#000;">Actualizado el '.format_date($obra['registro_certificados_fecha']).'</span> '; } ?> -->
 </div>
 </div>
 
@@ -152,7 +152,35 @@ foreach($ejecutados as $obra):
 </div>
 
 <div class="col-lg-8 col-md-8 col-sm-12">
+<div class="card p-20">
+<div class="card-body mx-4">
 
+<h3 class="card-title">Curva de inversion</h3>
+<?php if(!empty($obra['idplanes_de_trabajo'])){ 
+$plan_obra = find_by_id('planes_de_trabajo','idplanes_de_trabajo',$obra['idplanes_de_trabajo']);
+?>
+
+<label class="control-label text-muted" style="font-size:12px;">Según plan de trabajo vigente</label>
+<a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080">
+<div class="d-flex flex-wrap">
+<div class="my-auto ml-3" >
+<span style="font-weight:500">Plan <?php echo $plan_obra['numero'].' | '.$plan_obra['detalle']; ?></span>
+</div>
+<div class="ml-auto my-auto mr-3">
+<span onclick="ver_plan(<?php echo $obra['idplanes_de_trabajo']; ?>)">Ver</span><?php if(permiso('admin') || permiso('obras')){ ?> | 
+<span onclick="editar_planilla_plandetrabajo(<?php echo $obra['idplanes_de_trabajo']; ?>)">Editar</span> | 
+<span onclick="eliminar_plan(<?php echo $obra['idplanes_de_trabajo'];?>)" >Eliminar</span><?php } ?>
+</div>
+</div>
+</a><br>
+<?php } ?>
+<p><a href="content/prints/curva-inversion.php?id=<?php echo $obra_id;?>" style="padding-top: 20px;" target="_blank">Imprimir curva de inversion</a></p>
+
+<div class="table-responsive">
+<canvas id="curva" width="100%" height="40%"></canvas>
+</div>
+</div>
+</div>
 <div class="card">
 <div class="card-body">
 
@@ -169,8 +197,8 @@ foreach($ejecutados as $obra):
 <div class="p-20">
 
 <?php if(permiso('inspeccion') && $obra['idinspector'] == $user['id'] || permiso('admin')){ ?>
-  <div class="justify-content-center text-center p-20">
-  <a class="btn btn-warning" title="Cargar datos" onclick="resultadoobra(<?php echo $obra['idobras']; ?>)">Confeccionar certificado de obra</a> 
+<div class="justify-content-center text-center p-20">
+<a class="btn btn-warning" title="Cargar datos" onclick="resultadoobra(<?php echo $obra['idobras']; ?>)">Confeccionar certificado de obra</a> 
 </div>
 <?php } ?>
 <div class="table-responsive">
@@ -245,36 +273,7 @@ foreach($ejecutados as $obra):
 
 </div>
 </div>
-                                  
-                                <div class="card p-20">
-                                <div class="card-body mx-4">
-                                
-<h3 class="card-title">Curva de inversion</h3>
-<?php if(!empty($obra['idplanes_de_trabajo'])){ 
-    $plan_obra = find_by_id('planes_de_trabajo','idplanes_de_trabajo',$obra['idplanes_de_trabajo']);
-    ?>
-    
-<label class="control-label text-muted" style="font-size:12px;">Según plan de trabajo vigente</label>
-<a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080">
-<div class="d-flex flex-wrap">
-<div class="my-auto ml-3" >
-<span style="font-weight:500">Plan <?php echo $plan_obra['numero'].' | '.$plan_obra['detalle']; ?></span>
-</div>
-<div class="ml-auto my-auto mr-3">
-    <span onclick="ver_plan(<?php echo $obra['idplanes_de_trabajo']; ?>)">Ver</span><?php if(permiso('admin') || permiso('obras')){ ?> | 
-    <span onclick="editar_planilla_plandetrabajo(<?php echo $obra['idplanes_de_trabajo']; ?>)">Editar</span> | 
-    <span onclick="eliminar_plan(<?php echo $obra['idplanes_de_trabajo'];?>)" >Eliminar</span><?php } ?>
-</div>
-</div>
-</a><br>
-<?php } ?>
-<p><a href="content/prints/curva-inversion.php?id=<?php echo $obra_id;?>" style="padding-top: 20px;" target="_blank">Imprimir curva de inversion</a></p>
 
-<div class="table-responsive">
-<canvas id="curva" width="100%" height="40%"></canvas>
-</div>
-</div>
-</div>
 </div>
 
 
@@ -284,45 +283,45 @@ foreach($ejecutados as $obra):
 $multa = array();
 $multa[] = 0;
 foreach ($certificados_multa as $c_mul):
-  $multa[] = ($c_mul['avance'] * $obra['valormulta']);
+$multa[] = ($c_mul['avance'] * $obra['valormulta']);
 endforeach;
 ?>
 <script>
-  var ctx = document.getElementById('curva');var chart = new Chart(ctx, {type: 'line',data: {labels: <?php print json_encode($numero); ?>,datasets: [{label: "Certificados",fill:false,lineTension: 0,borderColor: 'rgb(249, 113, 113)',data: <?php print json_encode($avance); ?>,},{label: "Plan oficial",fill:false,lineTension: 0,borderColor: 'rgb(124, 213, 254)',data: <?php print json_encode($avanceplan); ?>,},{label: "Multa",fill:false,borderDash: [5,5],lineTension: 0,borderColor: 'rgb(216, 202, 215)',data: <?php print json_encode($multa); ?>,}]},options: {scales: {xAxes: [{ticks: {beginAtZero:true,suggestedMin:0}}],yAxes: [{ticks: {beginAtZero:true,min:0,max: 100}}]},tooltips: {enabled: true,mode: 'single',callbacks: {title: function (tooltipItem, data) {return "Certificado Nº " + data.labels[tooltipItem[0].index];},label: function(tooltipItems, data) {return "Avance: " + tooltipItems.yLabel + ' %';},footer: function (tooltipItem, data) { return ""; }}}}});
+var ctx = document.getElementById('curva');var chart = new Chart(ctx, {type: 'line',data: {labels: <?php print json_encode($numero); ?>,datasets: [{label: "Certificados",fill:false,lineTension: 0,borderColor: 'rgb(249, 113, 113)',data: <?php print json_encode($avance); ?>,},{label: "Plan oficial",fill:false,lineTension: 0,borderColor: 'rgb(124, 213, 254)',data: <?php print json_encode($avanceplan); ?>,},{label: "Multa",fill:false,borderDash: [5,5],lineTension: 0,borderColor: 'rgb(216, 202, 215)',data: <?php print json_encode($multa); ?>,}]},options: {scales: {xAxes: [{ticks: {beginAtZero:true,suggestedMin:0}}],yAxes: [{ticks: {beginAtZero:true,min:0,max: 100}}]},tooltips: {enabled: true,mode: 'single',callbacks: {title: function (tooltipItem, data) {return "Certificado Nº " + data.labels[tooltipItem[0].index];},label: function(tooltipItems, data) {return "Avance: " + tooltipItems.yLabel + ' %';},footer: function (tooltipItem, data) { return ""; }}}}});
 </script>
 
 <script type="text/javascript" src="includes/ajax/scripts/certificados.js"></script>
 <script type="text/javascript" src="includes/assets/js/ajustes.js"></script>
-                              <?php } endforeach; ?>
-                              
-                              <script>
-  $(document).ready(funcion(){
-    
-  $('#certificados').DataTable({
-    columnDefs: [ {
-        "searchable": false,
-        "orderable": false,
-        "targets": 0
-    } ],
-    order: [],
+<?php } endforeach; ?>
 
-    responsive: true,
+<script>
+$(document).ready(funcion(){
+
+$('#certificados').DataTable({
+columnDefs: [ {
+"searchable": false,
+"orderable": false,
+"targets": 0
+} ],
+order: [],
+
+responsive: true,
 //scrollY:        "500px",
 scrollCollapse: true,
 paging:         true
 });
-  $('#certificados-redeterminados').DataTable({
-    columnDefs: [ {
-        "searchable": false,
-        "orderable": false,
-        "targets": 0
-    } ],
-    order: [],
+$('#certificados-redeterminados').DataTable({
+columnDefs: [ {
+"searchable": false,
+"orderable": false,
+"targets": 0
+} ],
+order: [],
 
-    responsive: true,
+responsive: true,
 //scrollY:        "500px",
 scrollCollapse: true,
 paging:         true
 });
-  })
+})
 </script>
