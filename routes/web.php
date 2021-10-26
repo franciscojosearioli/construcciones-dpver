@@ -31,5 +31,7 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/obra', 'ObraController@vista');
 Route::get('/obra/agregar', 'ObraController@agregar');
 
+Route::get('/password/reset/{token}/{email}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+
 
 

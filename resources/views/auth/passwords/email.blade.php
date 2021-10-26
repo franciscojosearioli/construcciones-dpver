@@ -17,7 +17,7 @@
             {{ csrf_field() }}
               <div class="form-group first">
                 <label for="email">Correo electronico</label>
-                <input type="email" class="form-control" placeholder="ejemplo@email.com" name="email" id="email"  disabled>
+                <input type="email" class="form-control" placeholder="ejemplo@email.com" name="email" id="email">
                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
