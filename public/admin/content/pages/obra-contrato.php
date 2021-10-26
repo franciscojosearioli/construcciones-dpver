@@ -75,7 +75,9 @@ foreach($ejecutados as $obra):
 
 </div></div>
 
-
+<h3 class="titulo-bienvenida p-20">
+   Cotizaciones
+    </h3>
 <div class="card">
 <div class="card-body mx-4">  
 <h3 class="card-title">Cotizaciones</h3>

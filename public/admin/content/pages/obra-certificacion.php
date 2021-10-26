@@ -56,10 +56,13 @@ if($obra['idobras'] == $obra_id){
 <div class="row justify-content-center">
 
 <div class="col-lg-4 col-md-4 col-sm-12">
+<h3 class="titulo-bienvenida p-20">
+Montos y Plazos vigentes
+    </h3>
 <div class="">
 <div class="card">
 <div class="card-body mx-4"> 
-<h3 class="card-title">Montos y Plazos vigentes</h3> 
+<h3 class="card-title"></h3> 
 <?php if(permiso('admin') || permiso('certificacion') || permiso('obras')){ ?>
 <div class="p-b-10"> <a href="" data-toggle="modal" data-target="#montos_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
 <?php } ?>
@@ -93,9 +96,11 @@ $cotizacion_obra = find_by_id('cotizaciones','idcotizaciones',$obra['idcotizacio
 
 </div>
 </div>
+<h3 class="titulo-bienvenida p-20">
+Avance de obra
+    </h3>
 <div class="card">
 <div class="card-body mx-4"> 
-<h3 class="card-title">Avance de obra</h3> 
 <?php if(permiso('admin') || permiso('certificacion') || permiso('obras')){ ?>
 <div class="p-b-10"> <a href="" data-toggle="modal" data-target="#avance_obra" ><i class="fas fa-edit"></i> Editar datos</a></div>
 <?php } ?>
@@ -111,10 +116,11 @@ $cotizacion_obra = find_by_id('cotizaciones','idcotizaciones',$obra['idcotizacio
 <p><?php if(!empty($obra['certificado_plazo'])){ echo $obra['certificado_plazo']; } ?></p>
 <?php if(!empty($obra['certificado_archivo'])){ ?><a href="../uploads/Obras/<?php echo $obra['idobras']; ?>/Certificacion/Ultimo/Certificado_<?php echo utf8_encode($obra['certificado_archivo']); ?>" target="_blank"><i class="fas fa-download"></i> <?php echo $obra['certificado_archivo']; ?></a><?php } ?>
 </div>
-</div>
+</div><h3 class="titulo-bienvenida p-20">
+Especificaciones segun pliego
+    </h3>
 <div class="card">
 <div class="card-body mx-4">  
-<h3 class="card-title">Especificaciones</h3>
 <?php if(permiso('admin') || permiso('certificacion') || permiso('obras')){ ?><div class="p-b-10"> <a href="" data-toggle="modal" data-target="#datos_certificados" ><i class="fas fa-edit"></i> Editar datos</a></div><?php } ?>
 <label class="control-label text-muted" style="font-size:12px;">Valor del margen de multa</label>
 <p><?php if(!empty($obra['valormulta'])){  echo $obra['valormulta']; } ?> </p>
@@ -154,10 +160,11 @@ echo '<hr>
 </div>
 
 <div class="col-lg-8 col-md-8 col-sm-12">
+<h3 class="titulo-bienvenida p-20">
+Curva de inversion
+    </h3>
 <div class="card p-20">
 <div class="card-body mx-4">
-
-<h3 class="card-title">Curva de inversion</h3>
 <?php if(!empty($obra['idplanes_de_trabajo'])){ 
 $plan_obra = find_by_id('planes_de_trabajo','idplanes_de_trabajo',$obra['idplanes_de_trabajo']);
 ?>
@@ -183,6 +190,9 @@ $plan_obra = find_by_id('planes_de_trabajo','idplanes_de_trabajo',$obra['idplane
 </div>
 </div>
 </div>
+<h3 class="titulo-bienvenida p-20">
+Certificacion de obra
+    </h3>
 <div class="card">
 <div class="card-body">
 

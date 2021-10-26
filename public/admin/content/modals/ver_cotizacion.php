@@ -27,7 +27,7 @@ $items_obras = rows_cotizaciones_obras($cotizacion['idobras'],$cotizacion['idcot
                     <h5><?php echo $obra['nombre']; ?></h5>
                             </div>
                           </div>    
-<table class="table table-striped" cellspacing="0" width="100%">
+<table class="table table-striped" cellspacing="0" width="100%" id="tabla_cotizacion">
             <thead>
               <tr>
               <th>Item</th>
@@ -58,14 +58,27 @@ $items_obras = rows_cotizaciones_obras($cotizacion['idobras'],$cotizacion['idcot
             <td style="width: 10%"><?php echo $item['sub_item']; ?></td>
             <td style="width: 40%"><?php echo $item['descripcion']; ?></td>
             <td style="width: 8%"><?php echo $item['unidad']; ?></td>
-            <td style="width: 18%"><?php echo $item['cantidad_aprobada']; ?></td>
-            <td style="width: 18%">$ <?php echo numero($item['precio_unitario']); ?></td>
+            <td style="width: 18%"><input type="number" readonly name="cantidad[]"  value="<?php echo $item['cantidad_aprobada']; ?>" hidden><?php echo $item['cantidad_aprobada']; ?></td>
+            <td style="width: 18%"><input type="number" readonly name="precio_unitario_items[]" value="<?php echo $item['precio_unitario']; ?>" hidden ><input type="number" readonly name="importe[]" class="importe" hidden>$ <?php echo numero($item['precio_unitario']); ?></td>
             <td style="width: 18%"><?php echo $item['tipo']; ?></td>
           </tr>
-        <?php } endforeach; ?>       
+        <?php } endforeach; ?>      
+        <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>TOTAL</td>
+      <td><input type="number"  id="sum_total" name="total_importe" style="border:none;" readonly/></td>
+      <td></td>
+        </tr> 
               </tbody>
             </table>
             </div>
         </div>
     </div>
 </div>
+<script>
+  
+
+</script>
