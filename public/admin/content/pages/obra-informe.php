@@ -57,8 +57,16 @@ foreach($ejecutados as $obra):
                                           </div>
                                         </div>
                                       </div>  -->
-
-                                      <div class="row p-t-20 p-b-20 justify-content-center">
+<div class="row p-t-20 p-b-20 justify-content-center">
+<div class="col-lg-10 col-md-10 col-sm-12">
+                                           <div class="row">
+<?php include('../../content/forms/agregar_mapa.php');
+include('../../content/forms/eliminar_mapa.php');
+?>
+</div>
+</div>
+</div>
+                                      <div class="row p-t-20 p-b-20 justify-content-center"  id="vista_mapa_obra">
                                         <div class="col-lg-8 col-md-8 col-sm-12">
                                            <div class="row">
     <h3 class="titulo-bienvenida p-20">
@@ -145,7 +153,7 @@ foreach($ejecutados as $obra):
   </div> 
                                             <div class="card">
                                               <div class="card-body">
-                                        <div id="vista_mapa_obra">
+                                        <div>
 <div class="table-responsive">
           <div id="map_obra" style="z-index:0;width: 100%; height: 400px"></div>
           <?php if(permiso('admin') || permiso('obras')){ ?>
@@ -156,9 +164,7 @@ foreach($ejecutados as $obra):
                                   </div>
 <?php } ?>
         </div>                                  </div>
-        <?php include('../../content/forms/agregar_mapa.php');
-include('../../content/forms/eliminar_mapa.php');
-?>
+
 <script>
   $(document).ready(function() {
   var map_obra = L.map('map_obra').invalidateSize(true).setView( [-32.287132632616355, -59.23828124999999], 7 );L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZnJhbmNpc2Nvam9zZWFyaW9saSIsImEiOiJjandhajByNDIwYWx0M3lrZGtkdHR6bGxtIn0.wVbgor3CUTqqfxbuxlzFmA', {attribution: '',fullscreenControl: true,maxZoom: 20,minZoom:6,id: 'mapbox/streets-v11',accessToken: 'pk.eyJ1IjoiZnJhbmNpc2Nvam9zZWFyaW9saSIsImEiOiJjandhajByNDIwYWx0M3lrZGtkdHR6bGxtIn0.wVbgor3CUTqqfxbuxlzFmA'}).addTo(map_obra);map_obra.addControl(new L.Control.Fullscreen());$(document).ready(function() {add_punto();add_linea();});function add_punto() {for(var i=0; i<puntos.length; i++) {var marker = L.marker( [puntos[i]['latitud'], puntos[i]['longitud']]).addTo(map_obra);marker.bindPopup( "<b>" + puntos[i]['titulo']+"</b>");}}function stringToGeoPoints( geo ) {var linesPin = geo.split(",");var linesLat = new Array();var linesLng = new Array();for(i=0; i < linesPin.length; i++) {if(i % 2) {linesLat.push(linesPin[i]);}else{linesLng.push(linesPin[i]);}}var latLngLine = new Array();for(i=0; i<linesLng.length;i++) {latLngLine.push( L.latLng( linesLat[i], linesLng[i]));}return latLngLine;}function add_linea() {for(var i=0; i < lineas.length; i++) {var polyline = L.polyline( stringToGeoPoints(lineas[i]['georeferencia']), { color: lineas[i]['color']}).addTo(map_obra);polyline.bindPopup( "<b>" + lineas[i]['titulo']);   }}var puntos = <?php echo json_encode($mapa_puntos) ?>;var lineas = <?php echo json_encode($mapa_lineas) ?>;

@@ -9,6 +9,8 @@ $mapa_lineas = obra_lineas($proyecto_id);
 }
  ?>
     <div id="mapa_eliminar">
+      <div class="card">
+                                              <div class="card-body">
       <div class="table-responsive">
           <ul class="nav nav-tabs customtab2 justify-content-center m-b-30" role="tablist">
             <li class="nav-item">
@@ -75,6 +77,8 @@ $mapa_lineas = obra_lineas($proyecto_id);
                 </div>
 
 
+                </div>
+      </div>
 
 
       </div>

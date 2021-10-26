@@ -1,4 +1,6 @@
     <div id="mapa_agregar">
+      <div class="card">
+                                              <div class="card-body">
       <div class="table-responsive">
           <ul class="nav nav-tabs customtab2 justify-content-center m-b-30" role="tablist">
             <li class="nav-item">
@@ -21,7 +23,7 @@
               <div class="form-group p-20">
                 <div class="row">
                   <div class="col-md-7">
-  <div id="add_ruta" style="width: 100%; height: 500px"></div><br />
+  <div id="add_ruta" style="z-index:0;width: 100%; height: 500px"></div><br />
 </div>
 
 
@@ -83,7 +85,7 @@
               <div class="form-group p-20">
                 <div class="row">
                   <div class="col-md-7">
-  <div id="add_marcador" style="width: 100%; height: 500px"></div><br />
+  <div id="add_marcador" style="z-index:0;width: 100%; height: 500px"></div><br />
 </div>
 
 
@@ -135,7 +137,8 @@
 
 
 
-
+                </div>
+      </div>
       </div>
     </div>
 
