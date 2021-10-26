@@ -1,0 +1,26 @@
+Usuario: construcciones
+Contrase�a: m5WAuKDydqRKssAj
+
+Para el proyecto: \\10.100.32.8
+Para la base de datos: 10.100.32.8/phpmyadmin
+Para el celular: dpver.ddns.info:8080/construcciones/
+Para pc vialidad: 10.100.32.8/construcciones/
+URL externa: sac.dpver.gov.ar
+
+Info:
+Apache/2.4.17 (Win32) 
+OpenSSL/1.0.2d
+PHP/5.6.20
+MariaDB 10.1.13 phpmyadmin 4.5.1
+UTF-8 Unicode (utf8)
+
+Librerias:
+Bootstrap v4.0.0-beta
+jQuery v3.2.0 
+
+// DEPURACION DE ERRORES PHP
+
+<?php
+ini_set ( 'display_errors', 1 );
+error_reporting ( E_ALL );
+?>

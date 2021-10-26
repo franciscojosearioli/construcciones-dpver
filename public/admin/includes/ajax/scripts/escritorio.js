@@ -1,0 +1,268 @@
+(function($) {
+'use strict';
+$(function () {
+//Event carousel
+$("#events").owlCarousel({
+loop:true,
+margin:0,
+autoPlay: 3000,
+responsive:{
+0:{
+items:1
+},
+768:{
+items:2
+},
+979:{
+items:2
+},
+1199:{
+items:3
+}
+},
+singleItem : false,
+dots: false,
+nav: false,
+navText : ["",""]
+});
+$(".btn-event-show").collapse();
+//Events: Tooltip
+$('.event-user').tooltip({ boundary: 'window' });
+
+});
+})(jQuery); 
+
+
+$('#nav-tab2 a').on('click', function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+// Carouseles
+$(document).ready(function(){
+
+$('.ultimos-tramites').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:false
+        }
+    }
+});
+$('.ultimas-recepciones').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:false
+        }
+    }
+});
+
+$('.ultimas-obras').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:false
+        }
+    }
+});
+$('.ultimas-modificaciones-obras').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:false
+        }
+    }
+});
+$('.ultimas-ampliaciones-obras').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:true,
+            loop:false
+        }
+    }
+});
+$('.ultimas-neutralizaciones-obras').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:false
+        }
+    }
+});
+$('.eventos-obras').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:false,
+            loop:false
+        }
+    }
+});
+
+
+$('.ultimos-certificados').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:false,
+            loop:false
+        }
+    }
+});
+$('.ultimos-certificados-redeterminados').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:false,
+            loop:false
+        }
+    }
+});
+$('.ultimos-precios-actualizados').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:false,
+            loop:false
+        }
+    }
+});
+  
+$('.accesos-directos').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,nav:false,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:false,
+            loop:false
+        }
+    }
+});
+});

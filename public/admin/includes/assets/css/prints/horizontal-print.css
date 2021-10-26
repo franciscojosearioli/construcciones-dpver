@@ -1,0 +1,19 @@
+.hocultar{
+  display:none;
+}
+.pagina{
+  padding:0px;
+  margin:0px;
+}
+   .container{
+    width: 90%;
+    max-width: 100%;
+    margin: 0px;
+    padding:0px;
+    background:#fff;
+   }
+html, body{
+  background:#fff;
+  color:#000;
+}
+@media print{@page {size: landscape}}
