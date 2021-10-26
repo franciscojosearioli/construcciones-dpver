@@ -11,9 +11,11 @@ $ejecutados = all_oyp();
 $certificados = certificados_obras($obra_id);
 $inspeccion_certificados = certificados_inspeccion($obra_id);
 $certificados_redeterminados = certificados_red_inspeccion($obra_id);
-$certificados_plan = plan_oficial_obras($obra_id);
 $certificados_adec = certificados_redeterminados_obras($obra_id);
+if(!empty($obra['idplanes_de_trabajo']) && $obra['idplanes_de_trabajo'] != 0 && $obra['idplanes_de_trabajo'] != NULL){
+$certificados_plan = plan_oficial_obras($obra_id,$obra['idplanes_de_trabajo']);
 $certificados_multa = plan_oficial_obras($obra_id,$obra['idplanes_de_trabajo']);
+}
 
 $all_user = all_usuarios();
 $obra_bacheo = obra_bacheo($obra_id);

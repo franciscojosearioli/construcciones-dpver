@@ -87,7 +87,7 @@ foreach($ejecutados as $obra):
 
 <div class="d-flex flex-wrap">
 <div class="my-auto ml-3" >
-<span style="font-weight:500">Cotizacion <?php echo $cotizacion_obra['numero']; ?></span>
+<span style="font-weight:500">Cotizacion <?php echo $cotizacion_obra['numero']; ?>  | <?php echo $cotizacion_obra['detalle']; ?></span>
 </div>
 <div class="ml-auto my-auto mr-3">
     <span onclick="ver_cotizacion(<?php echo $obra['idcotizaciones']; ?>)">Ver</span> <?php if(permiso('admin') || permiso('obras')){ ?> |  
@@ -102,7 +102,7 @@ foreach($ejecutados as $obra):
 <a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080" >
 <div class="d-flex flex-wrap">
 <div class="my-auto ml-3" >
-<span style="font-weight:500">Cotizacion <?php echo $cotizacion_obra['numero']; ?></span>
+<span style="font-weight:500">Cotizacion <?php echo $c['numero']; ?> | <?php echo $c['detalle']; ?></span>
 </div>
 <div class="ml-auto my-auto mr-3">
     <span onclick="ver_cotizacion(<?php echo $c['idcotizaciones']; ?>)">Ver</span>  <?php if(permiso('admin') || permiso('obras')){ ?> | 
@@ -126,7 +126,7 @@ foreach($ejecutados as $obra):
 <a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080">
 <div class="d-flex flex-wrap">
 <div class="my-auto ml-3" >
-<span style="font-weight:500">Plan <?php echo $plan_obra['numero']; ?></span>
+<span style="font-weight:500">Plan <?php echo $plan_obra['numero']; ?> | <?php echo $plan_obra['detalle']; ?></span>
 </div>
 <div class="ml-auto my-auto mr-3">
     <span onclick="ver_plan(<?php echo $obra['idplanes_de_trabajo']; ?>)">Ver</span><?php if(permiso('admin') || permiso('obras')){ ?> | 
@@ -142,7 +142,7 @@ foreach($ejecutados as $obra):
 <a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080" >
 <div class="d-flex flex-wrap">
 <div class="my-auto ml-3" >
-<span style="font-weight:500">Plan <?php echo $p['numero']; ?></span>
+<span style="font-weight:500">Plan <?php echo $p['numero']; ?> | <?php echo $p['detalle']; ?></span>
 </div>
 <div class="ml-auto my-auto mr-3">
     <span onclick="ver_plan(<?php echo $p['idplanes_de_trabajo']; ?>)">Ver</span><?php if(permiso('admin') || permiso('obras')){ ?> | 

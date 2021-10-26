@@ -14,9 +14,14 @@ require_once("../../includes/functions/map.php");
 require_once('../../../uploads/files.php'); 
 $ejecutados = all_oyp();
 $certificados = certificados_obras($obra_id);
-$certificados_plan = plan_oficial_obras($obra_id);
+
+
 $certificados_adec = certificados_redeterminados_obras($obra_id);
-$certificados_multa = plan_oficial_obras($obra_id);
+
+if(!empty($obra['idplanes_de_trabajo']) && $obra['idplanes_de_trabajo'] != 0 && $obra['idplanes_de_trabajo'] != NULL){
+    $certificados_plan = plan_oficial_obras($obra_id,$obra['idplanes_de_trabajo']);
+    $certificados_multa = plan_oficial_obras($obra_id,$obra['idplanes_de_trabajo']);
+    }
 $ordenes = ordenes_de_servicio($obra_id);
 $notas = notas_de_pedido($obra_id);
 $all_user = all_usuarios();
