@@ -37,8 +37,6 @@
 <script src="includes/assets/plugins/jszip/jszip.min.js"></script>
 <script src="includes/assets/plugins/file_tree/js/php_file_tree.js" type="text/javascript"></script>
 <script src="includes/assets/plugins/typeahead/js/typeahead.js"></script>  
-<script src="includes/assets/plugins/wizard/jquery.steps.min.js"></script>
-<script src="includes/assets/plugins/wizard/jquery.validate.min.js"></script>
 <script src="includes/assets/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="includes/assets/plugins/owl-carousel2/owl.carousel.min.js"></script>

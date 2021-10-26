@@ -41,7 +41,6 @@ session_destroy();
 <link href="includes/assets/plugins/dropify/dist/css/dropify.min.css" rel="stylesheet">
 <link href="includes/assets/plugins/dropzone-master/dist/dropzone.css" rel="stylesheet" type="text/css" />
 <link href="includes/assets/plugins/typeahead/css/typeahead.css" rel="stylesheet">
-<link href="includes/assets/plugins/wizard/steps.css" rel="stylesheet">
 <link href="includes/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 <?php if($user['theme'] == 'light'){ ?>
 <link href="includes/assets/css/themes/light-mode.css" id="theme" rel="stylesheet">
@@ -59,7 +58,6 @@ session_destroy();
 
 <!-- MAS -->
 
-<script src="includes/assets/plugins/ckeditor5/ckeditor.js"></script>
 <script src="includes/assets/plugins/leaflet/js/leaflet.js"></script>
 <script src="includes/assets/plugins/leaflet/js/leaflet.fullscreen.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>

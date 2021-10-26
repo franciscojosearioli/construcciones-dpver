@@ -16,8 +16,8 @@ if(isset($_POST['add_obra'])){
   $plan_de_trabajo  = clean($db->escape($_POST['plan_de_trabajo']));
   $cotizacion  = clean($db->escape($_POST['cotizacion']));
   $certificado_vencimiento   = clean($db->escape($_POST['certificado_vencimiento']));  
-  $memoria_descriptiva   = clean($db->escape($_POST['memoria_descriptiva']));  
-  $memoria_descriptiva_vigente   = clean($db->escape($_POST['memoria_descriptiva_vigente']));  
+  $memoria_descriptiva   = $_POST['memoria_descriptiva'];  
+  $memoria_descriptiva_vigente   = $_POST['memoria_descriptiva_vigente'];  
   $proyecto_monto   = clean($db->escape($_POST['proyecto_monto']));
   $proyecto_monto_fecha  = clean($db->escape($_POST['proyecto_monto_fecha']));    
   $proyecto_plazo   = clean($db->escape($_POST['proyecto_plazo']));
@@ -92,7 +92,7 @@ if(isset($_POST['edit_obra'])){
   $ubicacion  = clean($db->escape($_POST['ubicacion']));
   $certificado_vencimiento  = clean($db->escape($_POST['certificado_vencimiento']));
   $memoria_descriptiva   = $_POST['memoria_descriptiva']; 
-  $memoria_descriptiva_vigente   = clean($db->escape($_POST['memoria_descriptiva_vigente']));  
+  $memoria_descriptiva_vigente   = $_POST['memoria_descriptiva_vigente'];  
   $proyecto_monto   = clean($db->escape($_POST['proyecto_monto']));
   $proyecto_monto_fecha  = clean($db->escape($_POST['proyecto_monto_fecha']));    
   $proyecto_plazo   = clean($db->escape($_POST['proyecto_plazo']));
