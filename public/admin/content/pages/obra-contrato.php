@@ -16,10 +16,12 @@ foreach($ejecutados as $obra):
 <div class="row">
 <div class="col-lg-12 col-md-12 col-sm-12">
 <div class="row justify-content-center">
-<div class="col-lg-5 col-md-5 col-sm-12">
+<div class="col-lg-5 col-md-5 col-sm-12">    
+    <h3 class="titulo-bienvenida p-20">
+   Contratacion de obra
+    </h3>
 <div class="card">
 <div class="card-body mx-4">  
-<h3 class="card-title">Informacion de contrato</h3>
 <label class="control-label text-muted" style="font-size:12px;">Tipo de contratacion</label>
                                             <p><?php echo $obra['tipo_contratacion']; ?></p>
                                             <label class="control-label text-muted" style="font-size:12px;">Aprobacion de pliegos</label>
@@ -36,7 +38,24 @@ foreach($ejecutados as $obra):
           ?>
                                             <label class="control-label text-muted" style="font-size:12px;">Contratista</label>
                                             <p><?php echo $obra['contratista']; ?></p>
-                                            <label class="control-label text-muted" style="font-size:12px;">Firma del contrato</label>
+                                            <label class="control-label text-muted" style="font-size:12px;">Financiacion</label>
+                                            <p><?php echo $obra['tipo_financiamiento']; ?></p>
+                                            <label class="control-label text-muted" style="font-size:12px;">Finalizacion aproximada</label>
+                                            <p><?php if($obra['fecha_fin_no_define'] == 0){
+                                            if($obra['fecha_fin'] != '0000-00-00'){ echo format_date($obra['fecha_fin']);}}else{ echo 'No define';}
+                                             ?></p>
+                                             
+</div>
+</div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-12">
+<h3 class="titulo-bienvenida p-20">
+   Contrato de obra
+    </h3>
+
+    <div class="card">
+<div class="card-body mx-4">  
+<label class="control-label text-muted" style="font-size:12px;">Firma del contrato</label>
                                             <p><?php if($obra['contrato_fecha'] != '0000-00-00'){ echo format_date($obra['contrato_fecha']);} else { echo ''; } ?></p>
                                             <?php
           $allowed_extensions = array("pdf");
@@ -52,25 +71,14 @@ foreach($ejecutados as $obra):
           $allowed_extensions = array("pdf");
           echo php_file_tree("../../../uploads/obras/".$obra['idobras']."/Archivo/5-Acta de inicio", "[link]", $allowed_extensions);
           ?>
-          <!--<?php $carpeta = @scandir($_SERVER['DOCUMENT_ROOT']."/construcciones/public/uploads/Obras/".$obra['idobras']."/Archivo/4-Contrato");
-          if (count($carpeta) > 2){
-              echo 'no vacio';
-          }else{ echo 'vacio'; }
-          ?>-->
-                                            <label class="control-label text-muted" style="font-size:12px;">Financiacion</label>
-                                            <p><?php echo $obra['tipo_financiamiento']; ?></p>
-                                            <label class="control-label text-muted" style="font-size:12px;">Finalizacion aproximada</label>
-                                            <p><?php if($obra['fecha_fin_no_define'] == 0){
-                                            if($obra['fecha_fin'] != '0000-00-00'){ echo format_date($obra['fecha_fin']);}}else{ echo 'No define';}
-                                             ?></p>
-                                             
-</div>
-</div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-5 col-sm-12">
+
+
+</div></div>
+
+
 <div class="card">
 <div class="card-body mx-4">  
-<h3 class="card-title">Cotizacion</h3>
+<h3 class="card-title">Cotizaciones</h3>
 <?php if(!empty($obra['idcotizaciones'])){ 
     $cotizacion_obra = find_by_id('cotizaciones','idcotizaciones',$obra['idcotizaciones']);
     ?>
@@ -109,7 +117,7 @@ foreach($ejecutados as $obra):
 
 <div class="card">
 <div class="card-body mx-4">  
-<h3 class="card-title">Plan de trabajo</h3>
+<h3 class="card-title">Planes de trabajo</h3>
 <?php if(!empty($obra['idplanes_de_trabajo'])){ 
     $plan_obra = find_by_id('planes_de_trabajo','idplanes_de_trabajo',$obra['idplanes_de_trabajo']);
     ?>
