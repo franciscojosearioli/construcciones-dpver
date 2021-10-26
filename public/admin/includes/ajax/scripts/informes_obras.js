@@ -430,3 +430,38 @@ function editar_modificacion(valor){
                 }
                 });
                 }            
+
+                
+    function eliminar_plan(id){
+      var id= id;
+      setTimeout(function(){ window.location = "includes/functions/eliminar.php?id="+id+"&url=refresh&tipo=planilla-plandetrabajo"; }, 1000);
+  }
+
+  function eliminar_cotizacion(id){
+      var id= id;
+      setTimeout(function(){ window.location = "includes/functions/eliminar.php?id="+id+"&url=refresh&tipo=planilla-cotizacion"; }, 1000);
+  }
+function ver_plan(valor){
+var valor = valor;
+$.ajax({
+type: "POST",
+data: "id="+valor,
+url: "content/modals/ver_plan_de_trabajo.php",
+success: function(respuesta) {
+$('#modal-planillas').html(respuesta).appendTo('body');
+$('#ver_plan_de_trabajo').modal('show');
+}
+});
+}
+function ver_cotizacion(valor){
+var valor = valor;
+$.ajax({
+type: "POST",
+data: "id="+valor,
+url: "content/modals/ver_cotizacion.php",
+success: function(respuesta) {
+$('#modal-planillas').html(respuesta).appendTo('body');
+$('#ver_cotizacion').modal('show');
+}
+});
+}
