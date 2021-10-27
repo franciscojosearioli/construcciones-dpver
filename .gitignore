@@ -1,7 +1,5 @@
 /node_modules
-/public/storage
 /public/file_manager
 /public/uploads
-/storage
 /vendor
 .env
