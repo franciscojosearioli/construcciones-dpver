@@ -30,15 +30,9 @@ foreach($ejecutados as $obra):
           $allowed_extensions = array("pdf");
           echo php_file_tree("../../../uploads/obras/".$obra['idobras']."/Archivo/2-Resolucion aprobacion", "[link]", $allowed_extensions);
           ?>
-
-                                            <label class="control-label text-muted" style="font-size:12px;">Contratista</label>
-                                            <p><?php echo $obra['contratista']; ?></p>
                                             <label class="control-label text-muted" style="font-size:12px;">Financiacion</label>
                                             <p><?php echo $obra['tipo_financiamiento']; ?></p>
-                                            <label class="control-label text-muted" style="font-size:12px;">Finalizacion aproximada</label>
-                                            <p><?php if($obra['fecha_fin_no_define'] == 0){
-                                            if($obra['fecha_fin'] != '0000-00-00'){ echo format_date($obra['fecha_fin']);}}else{ echo 'No define';}
-                                             ?></p>
+                                            
                                              
 </div>
 </div>
@@ -99,7 +93,10 @@ foreach($ejecutados as $obra):
           $allowed_extensions = array("pdf");
           echo php_file_tree("../../../uploads/obras/".$obra['idobras']."/Archivo/5-Acta de inicio", "[link]", $allowed_extensions);
           ?>
-
+<label class="control-label text-muted" style="font-size:12px;">Finalizacion aproximada</label>
+                                            <p><?php if($obra['fecha_fin_no_define'] == 0){
+                                            if($obra['fecha_fin'] != '0000-00-00'){ echo format_date($obra['fecha_fin']);}}else{ echo 'No define';}
+                                             ?></p>
 
 </div></div>
 
