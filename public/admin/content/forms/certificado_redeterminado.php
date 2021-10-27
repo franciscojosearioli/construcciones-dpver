@@ -289,7 +289,7 @@ $descuentos = listar_descuentoscertificados();
       <td><input type="number" disabled step="0.001" style="width:70px;" value="<?php echo $item['cantidad_acumulada']; ?>" name="valor_acumulado[]"><input type="number" disabled hidden step="0.001" name="cantidad_aprobada[]" value="<?php echo $item['cantidad_aprobada']; ?>"></td>
       <td><input type="number" disabled step="0.001" style="width:70px;" name="total_individual_acumulado[]" max="<?php echo $item['cantidad_aprobada']; ?>"></td>
       <td><input type="number" disabled step="0.001" name="cantidad_aprobada[]" value="<?php echo $item['cantidad_aprobada']; ?>"> </td>-->
-<td><input type="number" readonly name="precio_unitario_items[]" value="<?php echo $item['precio_unitario']; ?>" style="border:none;"</td>
+<td><input type="number" readonly name="precio_unitario_items[]" value="<?php echo $item['precio_unitario']; ?>" style="border:none;"></td>
       <td><input type="number" readonly name="importe[]" class="importe" style="border:none;"><input type="number" disabled hidden name="importe_total[]" class="importe_total"></td>
     </tr>   
     <?php } endforeach; ?>
