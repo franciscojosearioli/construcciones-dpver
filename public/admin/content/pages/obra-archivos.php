@@ -19,10 +19,11 @@ foreach($ejecutados as $obra):
 
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-12">
-
+<h3 class="titulo-bienvenida p-20">
+   Archivos de obra
+    </h3>
 <div class="card">
 <div class="card-body mx-4">
-                                  <h3>Archivos de obra</h3>
             <div class="table-responsive" >
           <?php
           $allowed_extensions = array("gif", "jpg", "jpeg", "png", "xls", "doc", "dwg", "pdf");
@@ -36,9 +37,11 @@ foreach($ejecutados as $obra):
 
       <div class="col-lg-6 col-md-6 col-sm-12">
 <?php if(is_dir("../../../uploads/obras/".$obra['idobras']."/Tramites")){ ?>
+  <h3 class="titulo-bienvenida p-20">
+   Tramites de obra
+    </h3>
 <div class="card">
 <div class="card-body mx-4">
-                                  <h3>Tramites de obra</h3>
             <div class="table-responsive" >
           <?php
           $allowed_extensions = array("gif", "jpg", "jpeg", "png", "xls", "doc", "dwg", "pdf");
@@ -55,9 +58,11 @@ foreach($ejecutados as $obra):
 
 
       <div class="col-lg-3 col-md-3 col-sm-12">
+        <h3 class="titulo-bienvenida p-20">
+   Actividades de obra
+    </h3>
         <div class="card">
 <div class="card-body">
-<h3 class="p-b-10">Registro de eventos</h3>
 <?php if(!empty($actividades)){ ?>
 <div class="list-group usuarios_movimientos scrollbar-ripe-malinka">
 <?php 

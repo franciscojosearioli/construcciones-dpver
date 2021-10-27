@@ -30,14 +30,17 @@ if($obra['idobras'] == $obra_id){
 
 <div class="row">
 <div class="col-lg-4 col-md-4 col-sm-12">
+  <h3 class="titulo-bienvenida p-20">
+   Inspeccion designada
+    </h3>
 <div class="card">
 <div class="card-body p-t-30">
 <div class="row p-l-20 p-r-20 p-b-20">
 <div class="col-lg-12 col-md-12">
-<p>Inspector designado:</p>
 <?php if($obra['idinspector'] != 0){
 $usuario_a_cargo = usuarios_a_cargo($obra['idinspector']); 
 $usuarios_responsable = usuarios_responsable($obra['idinspector']); ?>
+<p>Inspector:</p>
 <a href="usuario.php?id=<?php echo $obra['idinspector'] ?>" class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080" >
 <span style="font-weight:500"><?php echo inspector_name($obra['idinspector']); ?></span>
 </a>
@@ -56,34 +59,14 @@ $user_equipo = find_by_id('users','id',(int)$u['idusuario']); ?>
 </div>
 </div>
 </div>
-<div class="card">
-<div class="card-body p-t-30">
-<div class="row p-l-20 p-r-20 p-b-20">
-<div class="col-lg-12 col-md-12">
-
-<p>Contratista adjudicada:</p>
-
-<?php if(!empty($obra['contratista'])){ ?>
-<a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080" >
-<span style="font-weight:500"><?php echo $obra['contratista']; ?></span>
-</a>
-<?php }else{ ?> No se ha designado contratista <?php } ?>
-<br>
-
-<!--<p>Responsable tecnico </p>
-
-<p>Responsable legal</p>-->
-
-</div>
-</div>
-</div>
-</div>
+<h3 class="titulo-bienvenida p-20">
+   Archivos de inspeccion
+    </h3>
 <div class="card">
 <div class="card-body">
 <div class="p-20">
 <div class="row">
 <div class="col-lg-12 col-md-12 col-sm-12">
-<p>Archivos de inspeccion</p>
             <div class="table-responsive">
           <?php
           $allowed_extensions = array("gif", "jpg", "jpeg", "png", "xls", "doc", "dwg", "pdf");
@@ -194,7 +177,9 @@ $user_equipo = find_by_id('users','id',(int)$u['idusuario']); ?>
 
 
 
-
+<h3 class="titulo-bienvenida p-20">
+   Informes de inspeccion
+    </h3>
 <div class="card">
 <div class="card-body">
 <ul class="nav nav-pills m-b-30 justify-content-center" >
@@ -322,7 +307,9 @@ $user_equipo = find_by_id('users','id',(int)$u['idusuario']); ?>
 
 
 
-
+<h3 class="titulo-bienvenida p-20">
+   Tramites de inspeccion
+    </h3>
 <div class="card">
 <div class="card-body">
 

@@ -18,7 +18,7 @@ foreach($ejecutados as $obra):
 
 <?php if(!empty($neutralizaciones_de_obra)){ ?>
 
-<h3 class="titulo-bienvenida">Neutralizaciones</h3>                       
+<h3 class="titulo-bienvenida p-20">Neutralizaciones</h3>                       
 <div class="owl-carousel obra-neutralizaciones">
 
 <?php 

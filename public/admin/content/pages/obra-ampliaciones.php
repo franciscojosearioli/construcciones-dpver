@@ -18,7 +18,7 @@ foreach($ejecutados as $obra):
 
 
 <?php if(!empty($ampliaciones_de_obra)){ ?>
-<h3 class="titulo-bienvenida">Ampliaciones</h3>            
+<h3 class="titulo-bienvenida p-20">Ampliaciones</h3>            
 <div class="owl-carousel obra-ampliaciones">
 <?php
 foreach($ampliaciones_de_obra as $ampliacion): 

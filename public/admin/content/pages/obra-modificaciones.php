@@ -16,7 +16,7 @@ foreach($ejecutados as $obra):
 
 
 <?php if(!empty($modificaciones_de_obra)){ ?>
-<h3 class="titulo-bienvenida">Modificaciones</h3>                       
+<h3 class="titulo-bienvenida p-20">Modificaciones</h3>                       
 <div class="owl-carousel obra-modificaciones">
 <?php 
 foreach($modificaciones_de_obra as $modificacion):

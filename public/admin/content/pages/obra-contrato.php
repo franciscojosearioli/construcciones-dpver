@@ -30,12 +30,7 @@ foreach($ejecutados as $obra):
           $allowed_extensions = array("pdf");
           echo php_file_tree("../../../uploads/obras/".$obra['idobras']."/Archivo/2-Resolucion aprobacion", "[link]", $allowed_extensions);
           ?>
-                                            <label class="control-label text-muted" style="font-size:12px;">Adjudicacion de empresa</label>
-                                            <p><?php if($obra['adjudicacion_res_fecha'] != '0000-00-00'){ echo format_date($obra['adjudicacion_res_fecha']); }else{'';} ?> <?php if(!empty($obra['adjudicacion_res_num'])){ echo 'por Res. Nº'.$obra['adjudicacion_res_num'];} else{echo '';} ?></p>
-                                            <?php
-          $allowed_extensions = array("pdf");
-          echo php_file_tree("../../../uploads/obras/".$obra['idobras']."/Archivo/3-Resolucion adjudicacion", "[link]", $allowed_extensions);
-          ?>
+
                                             <label class="control-label text-muted" style="font-size:12px;">Contratista</label>
                                             <p><?php echo $obra['contratista']; ?></p>
                                             <label class="control-label text-muted" style="font-size:12px;">Financiacion</label>
@@ -47,6 +42,39 @@ foreach($ejecutados as $obra):
                                              
 </div>
 </div>
+
+
+
+
+ 
+<h3 class="titulo-bienvenida p-20">
+   Empresa adjudicada
+    </h3>
+<div class="card">
+<div class="card-body mx-4">  
+
+<p>Contratista:</p>
+
+<?php if(!empty($obra['contratista'])){ ?>
+<a class="list-group-item" style="padding:15px; text-decoration: none; color:#00000080" >
+<span style="font-weight:500"><?php echo $obra['contratista']; ?></span>
+</a>
+<?php }else{ ?> No se ha designado contratista <?php } ?>
+<br>
+<label class="control-label text-muted" style="font-size:12px;">Resolucion de adjudicacion</label>
+                                            <p><?php if($obra['adjudicacion_res_fecha'] != '0000-00-00'){ echo format_date($obra['adjudicacion_res_fecha']); }else{'';} ?> <?php if(!empty($obra['adjudicacion_res_num'])){ echo 'por Res. Nº'.$obra['adjudicacion_res_num'];} else{echo '';} ?></p>
+                                            <?php
+          $allowed_extensions = array("pdf");
+          echo php_file_tree("../../../uploads/obras/".$obra['idobras']."/Archivo/3-Resolucion adjudicacion", "[link]", $allowed_extensions);
+          ?>
+</div>
+</div>
+
+
+
+
+
+
                                         </div>
                                         <div class="col-lg-5 col-md-5 col-sm-12">
 <h3 class="titulo-bienvenida p-20">
@@ -80,7 +108,6 @@ foreach($ejecutados as $obra):
     </h3>
 <div class="card">
 <div class="card-body mx-4">  
-<h3 class="card-title">Cotizaciones</h3>
 <?php if(!empty($obra['idcotizaciones'])){ 
     $cotizacion_obra = find_by_id('cotizaciones','idcotizaciones',$obra['idcotizaciones']);
     ?>
@@ -117,9 +144,11 @@ foreach($ejecutados as $obra):
 </div>
 </div>
 
+<h3 class="titulo-bienvenida p-20">
+   Planes de trabajo
+    </h3>
 <div class="card">
 <div class="card-body mx-4">  
-<h3 class="card-title">Planes de trabajo</h3>
 <?php if(!empty($obra['idplanes_de_trabajo'])){ 
     $plan_obra = find_by_id('planes_de_trabajo','idplanes_de_trabajo',$obra['idplanes_de_trabajo']);
     ?>
