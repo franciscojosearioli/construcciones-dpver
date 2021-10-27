@@ -1,12 +1,12 @@
-## About
+## S.A.C. - Sistema Administrativo de Construcciones
 
-Sistema administrativo de la direccion de construcciones de la direccion provincial de vialidad de entre rios
+Sistema web para la gestion de tramites y obras de la direccion de construcciones de la direccion provincial de vialidad de entre rios
 
-## Author
+## Autor
 
 Francisco Arioli
 
 
-## License
+## Licencia
 
 MIT license
