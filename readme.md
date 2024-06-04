@@ -4,10 +4,10 @@ Sistema web para la gestion de tramites y obras de la direccion de construccione
 
 ## Requerimientos
 
-- PHP 5.6
+- PHP 5.6.4
 - MySQL
 - Bootstrap 4
-- Laravel
+- Laravel 5.4
 
 ## Autor
 
